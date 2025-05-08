@@ -1,10 +1,9 @@
-import React from 'react'
-import Home from './Home'
+import Homepage from './Homepage'
 
 const Kid = () => {
   return (
     <div>
-        <Home />
+        <Homepage />
     </div>
   )
 }

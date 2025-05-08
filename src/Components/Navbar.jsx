@@ -12,15 +12,15 @@ const NavBar = () => {
     },
     {
       name: "Men",
-      link: "/home",
+      link: "/men",
     },
     {
       name: "Women",
-      link: "/home",
+      link: "/women",
     },
     {
       name: "Kids",
-      link: "/home",
+      link: "/kids",
     },
     {
       name: "Admin",
