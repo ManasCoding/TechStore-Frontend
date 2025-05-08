@@ -1,10 +1,9 @@
-import { useState } from 'react'
-
+import Router from './Components/Router'
 function App() {
 
   return (
     <>
-      <h1>hello mithun</h1>
+      <Router />
     </>
   )
 }
