@@ -33,7 +33,7 @@ const NavBar = () => {
           <div className="flex justify-between items-center align-center bg-zinc-300 text-black px-10 py-2 fixed top-0 left-0 w-full z-50">
 
               <div className="flex gap-20">
-                  <div className="flex flex-col "><span className="font-bold text-3xl text-red-600">Tech</span><span className="text-sm ml-8 mt-[-0.5rem]">Store</span></div>
+                  <div className="flex flex-col "><span className="font-bold text-3xl text-red-600">Tech</span><span className="text-sm ml-8 mt-[-0.5rem] text-blue-600">Store</span></div>
 
                   <div className="flex justify-between items-center gap-10">
                       {navLinks.map(({ link, name }) => (

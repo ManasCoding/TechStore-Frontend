@@ -1,4 +1,3 @@
-import React from 'react'
 import Footer from './Footer'
 
 const Profile = () => {
@@ -20,7 +19,7 @@ const Profile = () => {
             <div className='w-2/4 bg-zinc-400 flex flex-col justify-between items-center align-center mt-6 p-4 leading-loose'>
                 <div className='font-bold mb-6 flex justify-between items-center align-center gap-36'>
                     <div className='text-xl'>Profile Details</div>
-                    <div className='text-red-600 text-lg'>Logout</div>
+                    <a href="/"><div className='text-red-600 text-lg'>Logout</div></a>
                 </div>
 
                 <div className='flex justify-between items-center align-center gap-32'>
