@@ -6,6 +6,9 @@ import Wishlist from './Wishlist'
 import Cart from './Cart'
 import Landing from './Landing'
 import Admin from './Admin'
+import Men from './Men'
+import Women from './Women'
+import Kid from './Kid'
 const Router = () => {
   return (
     <div>
@@ -15,9 +18,9 @@ const Router = () => {
           <Route path='/profile' element={<Profile />} />
           <Route path='/wishlist' element={<Wishlist />} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='/men' element={<Home />} />
-          <Route path='/women' element={<Home />} />
-          <Route path='/kids' element={<Home />} />
+          <Route path='/men' element={<Men />} />
+          <Route path='/women' element={<Women />} />
+          <Route path='/kids' element={<Kid />} />
           <Route path='/admin' element={<Admin />} />
         </Routes>
     </div>
