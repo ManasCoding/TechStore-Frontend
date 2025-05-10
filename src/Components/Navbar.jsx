@@ -5,28 +5,28 @@ import { GiNunFace } from "react-icons/gi";
 import { Link } from "react-router-dom";
 const NavBar = () => {
 
-  const navLinks = [
-    {
-      name: "Home",
-      link: "/home",
-    },
-    {
-      name: "Men",
-      link: "/men",
-    },
-    {
-      name: "Women",
-      link: "/women",
-    },
-    {
-      name: "Kids",
-      link: "/kids",
-    },
-    {
-      name: "Admin",
-      link: "/admin",
-    },
-  ];
+  // const navLinks = [
+  //   {
+  //     name: "Home",
+  //     link: "/home",
+  //   },
+  //   {
+  //     name: "Men",
+  //     link: "/men",
+  //   },
+  //   {
+  //     name: "Women",
+  //     link: "/women",
+  //   },
+  //   {
+  //     name: "Kids",
+  //     link: "/kids",
+  //   },
+  //   {
+  //     name: "Admin",
+  //     link: "/admin",
+  //   },
+  // ];
 
   return (
     <div>
@@ -36,9 +36,10 @@ const NavBar = () => {
                   <div className="flex flex-col "><span className="font-bold text-3xl text-red-600">Tech</span><span className="text-sm ml-8 mt-[-0.5rem] text-blue-600">Store</span></div>
 
                   <div className="flex justify-between items-center gap-10">
-                      {navLinks.map(({ link, name }) => (
-                      <a href={link}><span>{name}</span></a>
-                      ))}
+                    <Link to={"/home"}>Home</Link>
+                    <Link to={"/men"}>Men</Link>
+                    <Link to={"/women"}>Women</Link>
+                    <Link to={"/kids"}>Kids</Link>
                   </div>
               </div>
 
