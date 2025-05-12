@@ -14,11 +14,11 @@ const Navbar = () => {
         </span>
 
         <div className="links hidden sm:flex justify-between items-center gap-5">
-          {["Home", "About", "Prices", "Contact"].map((item, index) => (
-            <a className="text-xs  hover:text-red-600" key={index} href="/home">    
-              {item}
-            </a>
-          ))}
+          <Link to="/home" className="hover:text-slate-900 text-xs">Home</Link>
+          <Link to="/men" className="hover:text-slate-900 text-xs">Men</Link>
+          <Link to="/women" className="hover:text-slate-900 text-xs">Women</Link>
+          <Link to="/kids" className="hover:text-slate-900 text-xs">Kids</Link>
+          <Link to="/admin" className="hover:text-slate-900 text-xs">Admin</Link>
         </div>
 
         <div className="hidden sm:flex justify-between items-center gap-5 text-lg">
