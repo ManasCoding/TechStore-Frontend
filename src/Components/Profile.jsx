@@ -1,5 +1,5 @@
 import Footer from './Footer'
-
+import { Link } from 'react-router-dom'
 const Profile = () => {
   return (
     <div>
@@ -13,10 +13,11 @@ const Profile = () => {
                 <h1 className='text-sm '>Saved Cards</h1>
                 <h1 className='text-sm '>Saved Wallets</h1>
                 <h1 className='text-sm '>Addresses</h1>
-                <h1 className='text-sm font-bold p-2 text-red-600'>Delete Account</h1>              
+                <Link to="/"><h1 className='text-sm font-bold p-2 text-red-600'>Delete Account</h1></Link>               
             </div>
 
             <div className='w-2/4 bg-zinc-400 flex flex-col justify-between items-center align-center mt-6 p-4 leading-loose'>
+            <p>No User Rigt Now</p>
                 <div className='font-bold mb-6 flex justify-between items-center align-center gap-36'>
                     <div className='text-xl'>Profile Details</div>
                     <a href="/"><div className='text-red-600 text-lg'>Logout</div></a>

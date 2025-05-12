@@ -9,6 +9,11 @@ import Admin from './Admin'
 import Men from './Men'
 import Women from './Women'
 import Kid from './Kid'
+import Login from './Login'
+import Signup from './Signup'
+import Details from './Details'
+import Create from './Create'
+import Edit from './Edit'
 const Router = () => {
   return (
     <div>
@@ -22,6 +27,11 @@ const Router = () => {
           <Route path='/women' element={<Women />} />
           <Route path='/kids' element={<Kid />} />
           <Route path='/admin' element={<Admin />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/details/:id' element={<Details />} />
+          <Route path='/edit/:id' element={<Edit />} />
+          <Route path='/create' element={<Create />} />
         </Routes>
     </div>
   )

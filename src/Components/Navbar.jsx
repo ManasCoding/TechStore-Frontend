@@ -40,6 +40,7 @@ const NavBar = () => {
                     <Link to={"/men"}>Men</Link>
                     <Link to={"/women"}>Women</Link>
                     <Link to={"/kids"}>Kids</Link>
+                    <Link to={"/admin"}>Admin</Link>
                   </div>
               </div>
 
@@ -65,7 +66,7 @@ const NavBar = () => {
                     </div>
                   </Link>
 
-                  <Link to = "/cart">
+                  <Link to = "/cart">    
                     <div className="flex flex-col items-center align-center">
                       <span className="text-2xl"><PiShoppingCartLight /></span>
                       <span className="text-sm">Cart</span>

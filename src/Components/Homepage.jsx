@@ -1,125 +1,67 @@
-import { useState } from 'react'
+import { useState, useEffect, useContext } from "react"
+import { useLocation } from "react-router-dom"
+import Sidebar from "./Sidebar"
+import { Link } from "react-router-dom"
+import { ProductContext } from "./Context"
+import Loading from "./Loading"
+import axios from "./axios"
 const Homepage = () => {
 
-    const [length, setLength] = useState(100); // Initial value set to 100
+    const [products] = useContext(ProductContext);
+    console.log(products);
 
-    const handleChange = (event) => {
-        setLength(event.target.value);
-  };
+    const {search} = useLocation();
+    console.log(search);
+    const category = decodeURIComponent(search.split("=")[1]);
+    console.log(category);
 
-  return (
+    
+    //let fillteredproducts = products && products;
+    const [fillteredProducts, setFillteredProducts] = useState(null);
+    const getproductscategory = async () => {
+        try {
+            const { data } = await axios.get(`/products/category/${category}`);
+            setFillteredProducts(data);
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        if (!fillteredProducts || category == "undefined") setFillteredProducts(products);
+        if (category != "undefined") {
+
+        setFillteredProducts(products.filter((product) => product.category == category));
+        getproductscategory();
+
+        }
+    }, [category, products]); 
+
+    console.log(fillteredProducts);
+    
+
+  return products ? ( 
     <div className='flex'>
+        <Sidebar />
 
-        <div className='w-[18%] bg-zinc-300'>
-            <div className='mt-20 px-6 flex flex-col gap-2'>
-                <h1 className='text-sm'>Home / Clothing / Men T-shirts</h1>
-                <h2 className='text-sm'>Men T-shirts - 213897 items</h2>
-                <h2 className='mb-4 mt-4 text-md font-bold'>FILTERS</h2>
-            </div>
+        <div className="w-[78%] text-white h-full fixed right-0 overflow-y-scroll scrollbar-hide">
+            <div className='py-4 flex flex-wrap gap-12 h-full w-full mt-20'>
 
-            <hr />
+                {fillteredProducts && fillteredProducts.map((product) => (
+                    <Link to={`/details/${product.id}`}><div className='h-[18rem] w-[14rem]'>
+                        <div className='h-[70%] bg-blue-500'><img src={product.image} alt="" className='w-full h-full object-cover'/></div> 
 
-            <div className=' px-6 flex flex-col gap-2'>
-                <h2 className='mb-2 mt-4 text-md font-bold'>CATEGORIES</h2>
-                <div className='flex gap-3'><span><input type="checkbox" /></span><span>T-shirts</span></div>
-                <div className='flex gap-3 mb-4'><span><input type="checkbox" /></span><span>Lounge T-shirts</span></div>
-            </div>
-
-            <hr />
-
-            <div className='px-6 flex flex-col gap-2 '>
-                <h2 className='mb-2 mt-4 text-md font-bold'>Brand</h2>
-                <div className='w-[100%] flex flex-col h-[10rem] overflow-y-scroll scrollbar-hide no-scrollbar'>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>T-shirts</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>Lounge T-shirts</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>T-shirts</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>Lounge T-shirts</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>T-shirts</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>Lounge T-shirts</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>T-shirts</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>Lounge T-shirts</span></div>
-                </div>
-                <h2 className='mb-4 mt-2 text-sm text-pink-600'>+ 1168 more</h2>
-            </div>
-
-            <hr />
-
-            <div className='px-6 flex flex-col gap-2 '>
-                <h2 className='mb-2 mt-4 text-md font-bold'>Price</h2>
-                <div className='flex flex-col w-[90%]'>
-                    <input type="range" min={100} max={10000} value={length} onChange={handleChange}/>
-                    <label className='mt-2 mb-4'>100 to {length}</label>
-                </div>
-            </div>
-
-            <hr />
-
-            <div className=' px-6 flex flex-col gap-2 '>
-                <h2 className='mb-2 mt-4 text-md font-bold'>Colour</h2>
-                <div className='w-[100%] flex flex-col h-[10rem] overflow-y-scroll scrollbar-hide no-scrollbar'>
-                    <div className='flex gap-3'><span><input type="checkbox" className='accent-zinc-900'/></span><span>Black</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" className='accent-green-500'/></span><span>Green</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" className='accent-blue-500'/></span><span>Blue</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" className='accent-gray-500'/></span><span>Gray</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" className='accent-yellow-500'/></span><span>Yellow</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" className='accent-pink-500'/></span><span>Pink</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" className='accent-red-500'/></span><span>Red</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" className='accent-white-900'/></span><span>White</span></div>
-                </div>
-                <h2 className='mb-4 mt-2 text-sm text-pink-600'>+ 45 more</h2>
-            </div>
-
-            <hr />
-
-            <div className=' px-6 flex flex-col gap-2 '>
-                <h2 className='mb-2 mt-4 text-md font-bold'>Discount Range</h2>
-                <div className='w-[100%] flex flex-col h-[10rem] overflow-y-scroll scrollbar-hide no-scrollbar mb-4'>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>10% and above</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>20% and above</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>30% and above</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>40% and above</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>50% and above</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>60% and above</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>70% and above</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>80% and above</span></div>
-                    <div className='flex gap-3'><span><input type="checkbox" /></span><span>90% and above</span></div>
-                </div>
-            </div>
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div className="w-[82%] text-white h-full">
-            <div className='py-6 px-6 flex flex-wrap gap-12 h-full w-full mt-20'>
+                        <div className='px-2 py-2 bg-zinc-300 text-black'>
+                            <div className='text-sm'>{product.title}</div>
+                            <div className='text-sm'>{product.category}</div>
+                            <div className='text-sm'><span>{product.price}</span><span> $</span></div>
+                        </div>
+                    </div></Link>
+                    ))}
 
                     <div className='h-[18rem] w-[14rem]'>
-                        <div className='h-[70%] bg-blue-500'><img src="https://image.hm.com/assets/hm/20/eb/20eb77111a9d172354c77d5f4cca17075063e628.jpg?imwidth=768" alt="" className='w-full h-full object-cover'/></div>
+                        <div className='h-[70%] bg-blue-500'><img src="https://th.bing.com/th/id/OIP._GXCoZrkA3GKCq1XLZkPmQHaLH?w=133&h=199&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="" className='w-full h-full object-cover'/></div>
 
                         <div className='px-2 py-2 bg-zinc-300 text-black'>
                             <div className='text-sm'>A random day in Dubai</div>
@@ -127,10 +69,46 @@ const Homepage = () => {
                             <div className='text-sm'><span>336k views</span><span>3 days ago</span></div>
                         </div>
                     </div>
+                    <div className='h-[18rem] w-[14rem]'>
+                        <div className='h-[70%] '><img src="https://th.bing.com/th/id/OIP.HvsweadVE92lpHnS8wLchgHaHa?w=199&h=199&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="" className='w-full h-full object-cover'/></div>
+
+                        <div className='px-2 py-2 bg-zinc-300 text-black'>
+                            <div className='text-sm'>A random day in Dubai</div>
+                            <div className='text-sm'>rajendra prasad</div>
+                            <div className='text-sm'><span>336k views</span><span>3 days ago</span></div>
+                        </div>
+                    </div>
+                    <div className='h-[18rem] w-[14rem]'>
+                        <div className='h-[70%] bg-blue-500'><img src="https://th.bing.com/th/id/OIP.O6U-TPwsWAUDB-CsuCfKBgHaHh?w=183&h=186&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="" className='w-full h-full object-cover'/></div> 
+                        <div className='px-2 py-2 bg-zinc-300 text-black'>
+                            <div className='text-sm'>A random day in Dubai</div>
+                            <div className='text-sm'>rajendra prasad</div>
+                            <div className='text-sm'><span>336k views</span><span>3 days ago</span></div>
+                        </div>
+                    </div>
+                    <div className='h-[18rem] w-[14rem]'>
+                        <div className='h-[70%]'><img src="https://th.bing.com/th/id/OIP.x_pnoJVUoMb2nMCYpyqeIQHaHh?w=187&h=191&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="" /></div>
+
+                        <div className='px-2 py-2 bg-zinc-300 text-black'>
+                            <div className='text-sm'>A random day in Dubai</div>
+                            <div className='text-sm'>rajendra prasad</div>
+                            <div className='text-sm'><span>336k views</span><span>3 days ago</span></div>
+                        </div>
+                    </div>
+                    <div className='h-[18rem] w-[14rem]'>
+                        <div className='h-[70%] bg-blue-500'><img src="https://th.bing.com/th/id/OIP._XzJ9UULGP6LH5Tb5iH2IQHaHa?w=165&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" className="w-full h-full object-cover" alt="" /></div>
+
+                        <div className='px-2 py-2 bg-zinc-300 text-black'>
+                            <div className='text-sm'>A random day in Dubai</div>
+                            <div className='text-sm'>rajendra prasad</div>
+                            <div className='text-sm'><span>336k views</span><span>3 days ago</span></div>
+                        </div>
+                    </div>
+                    
             </div>
         </div>
     </div>
-  )
+  ) : (<Loading />);
 }
 
 export default Homepage
