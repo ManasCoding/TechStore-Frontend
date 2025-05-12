@@ -2,7 +2,7 @@
 const Cart = () => {
   return (
     <div className='w-screen h-screen flex justify-center items-center align-center'>
-        <h1 className='text-3xl'>No User Rigt Now</h1>
+        <h1 className='text-3xl'>This Page Is Under Construction</h1>
     </div>
   )
 }

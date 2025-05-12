@@ -22,8 +22,8 @@ const Navbar = () => {
         </div>
 
         <div className="hidden sm:flex justify-between items-center gap-5 text-lg">
-          <Link to="/login" className="hover:text-slate-900">Login</Link>
-          <Link to="/signup" className="hover:text-slate-900">Signup</Link>
+          <Link to="/login" className="hover:text-red-900">Login</Link>
+          <Link to="/signup" className="hover:text-red-900">Signup</Link>
         </div>
 
       </div>

@@ -1,8 +1,12 @@
 import axios from 'axios'
 import { useState } from 'react'
 import Navbar from './Pages/Navbarcopy';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
+
+    const navigate = useNavigate();
     const [userInfo, setUserInfo] = useState({
           name: "",
           email: "",
@@ -33,14 +37,18 @@ const Signup = () => {
         e.preventDefault()
         console.log(e)
         try {
-          alert("Signup Successfull")
           console.log(userInfo)
           let response = await axios.post('http://localhost:5000/users/signup', userInfo)
             console.log(response);
-            alert(response.data.message);
           } catch (error) {
             console.log(error);
           }
+
+          navigate("/home");
+
+          toast.success("Signup Successfull");
+
+
       }
     
   return (

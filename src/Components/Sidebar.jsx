@@ -28,7 +28,7 @@ const Sidebar = () => {
 
 
     return products ? (
-    <div className='fixed w-[20%] h-screen bg-zinc-200 fixed overflow-y-scroll scrollbar-hide'>
+    <div className='fixed w-[40%] h-screen sm:w-[20%] bg-zinc-200 fixed overflow-y-scroll scrollbar-hide'>
         <div className='w-full bg-zinc-300'>
             <div className='px-6 flex flex-col gap-2 pt-24'>
                 <h1 className='text-sm'>Home / Clothing / Men T-shirts</h1>
