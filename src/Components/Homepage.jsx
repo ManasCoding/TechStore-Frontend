@@ -11,7 +11,10 @@ const Homepage = () => {
     console.log(products);
 
     const {search} = useLocation();
-    console.log(search);
+    // const searchParams = search.search;
+    // console.log(searchParams);
+    // const searchParams = new URLSearchParams(search);
+    // console.log(searchParams);
     const category = decodeURIComponent(search.split("=")[1]);
     console.log(category);
 

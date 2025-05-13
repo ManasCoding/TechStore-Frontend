@@ -1,17 +1,18 @@
 // import React, { useState, useEffect, useContext, useNavigate } from 'react'
 import { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from './axios';
 import { useParams } from 'react-router-dom'
 import Loading from './Loading.jsx'
+import { toast } from 'react-toastify';
 //  import { ProductContext } from './Context.jsx'
 const Details = () => {
   // const [products, setproducts] = useContext(ProductContext);
+  const navigate = useNavigate();
   const [products, setProducts] = useState(null);
   const {id} = useParams();
   console.log(id);
-  // const navigate = useNavigate();
 
 
 
@@ -38,11 +39,13 @@ const Details = () => {
   // localStorage.setItem("products", JSON.stringify(ProductDeletHandler));
   // navigate("/home");
 
-  // const ProductDeletHandler = (id) => {
-  //   const filteredProducts = products.filter((product) => product.id !== id);
-  //   setProducts(filteredProducts);
-  //   localStorage.setItem("products", JSON.stringify(filteredProducts));
-  // }
+  const ProductDeletHandler = (id) => {
+    const filteredProducts = products.filter((product) => product.id !== id);
+    setProducts(filteredProducts);
+    localStorage.setItem("products", JSON.stringify(filteredProducts));
+    toast.success("Product deleted successfully");
+    navigate("/home");
+  }
   
   return ( products ? (
     <div>
@@ -57,7 +60,7 @@ const Details = () => {
             {products.description}
           </p>
           <Link to={`/edit/${products.id}`} className='py-2 px-5 border border-blue-200 text-blue-300 mr-3'>Edit</Link>
-          <Link to='/home' className='py-2 px-5 border border-red-200 text-red-300'>Delete</Link>
+          <Link to="/home" onClick={() => ProductDeletHandler(products.id)} className='py-2 px-5 border border-red-200 text-red-300'>Delete</Link>
         </div>
       </div>
     </div> ) : (<Loading />)

@@ -1,6 +1,6 @@
 import React from "react";
 import { IoIosMenu } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="w-full fixed z-[999]">
@@ -18,7 +18,7 @@ const Navbar = () => {
           <Link to="/men" className="hover:text-slate-900 text-xs">Men</Link>
           <Link to="/women" className="hover:text-slate-900 text-xs">Women</Link>
           <Link to="/kids" className="hover:text-slate-900 text-xs">Kids</Link>
-          <Link to="/admin" className="hover:text-slate-900 text-xs">Admin</Link>
+          <NavLink to={'https://portfolio-projects-x68b.vercel.app/'} className="hover:text-slate-900 text-xs">Admin</NavLink>
         </div>
 
         <div className="hidden sm:flex justify-between items-center gap-5 text-lg">

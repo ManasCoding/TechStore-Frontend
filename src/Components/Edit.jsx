@@ -15,9 +15,9 @@ const Edit = () => {
         image: "",
     });
 
-    const changeHandler = (e) => {
-        setProduct({ ...product, [e.target.name]: e.target.value });
-    };
+    // const changeHandler = (e) => {
+    //     setProduct({ ...product, [e.target.name]: e.target.value });
+    // };
     
 
     useEffect(() => {

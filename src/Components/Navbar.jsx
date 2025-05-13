@@ -2,7 +2,7 @@ import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { GiSelfLove } from "react-icons/gi";
 import { GiNunFace } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const NavBar = () => {
 
   // const navLinks = [
@@ -40,7 +40,7 @@ const NavBar = () => {
                     <Link to={"/men"}>Men</Link>
                     <Link to={"/women"}>Women</Link>
                     <Link to={"/kids"}>Kids</Link>
-                    <Link to={"/admin"}>Admin</Link>
+                    <NavLink to={'https://portfolio-projects-x68b.vercel.app/'}>Admin</NavLink>
                   </div>
               </div>
 
