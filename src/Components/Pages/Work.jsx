@@ -8,7 +8,7 @@ const Work = () => {
       image:
         "https://a.storyblok.com/f/133769/2400x2990/729680ed7f/ottografie-2025-hero.jpg/m/1300x1620/filters:quality(90)",
       video:
-        "https://download-video-ak.vimeocdn.com/v3-1/playback/4692069d-08ba-4820-846c-31007f25c1ee/3109df1e?__token__=st=1747088775~exp=1747103175~acl=%2Fv3-1%2Fplayback%2F4692069d-08ba-4820-846c-31007f25c1ee%2F3109df1e%2A~hmac=c626fd1fb0f118fd6861fd66c637a0be420f8e42b10d696979c365d6e028a646&r=dXMtd2VzdDE%3D"
+        "https://download-video-ak.vimeocdn.com/v3-1/playback/4692069d-08ba-4820-846c-31007f25c1ee/3109df1e?__token__=st=1748134686~exp=1748138286~acl=%2Fv3-1%2Fplayback%2F4692069d-08ba-4820-846c-31007f25c1ee%2F3109df1e%2A~hmac=95298b6d96eaf25f5e487547eba7e829f030aa8f8d6ccb3e05f5a2dc05db4247&r=dXMtd2VzdDE%3D"
     },
     {
       heading: "Ottografie",
@@ -24,7 +24,7 @@ const Work = () => {
       image:
         "https://a.storyblok.com/f/133769/2409x3000/c155d3e27e/amaterasu-hero.jpg/m/1300x1619/filters:quality(90)",
       video:
-        "https://download-video-ak.vimeocdn.com/v3-1/playback/be1179ab-5aaa-4f63-a9a7-f40c70ae895e/96953878?__token__=st=1747088843~exp=1747103243~acl=%2Fv3-1%2Fplayback%2Fbe1179ab-5aaa-4f63-a9a7-f40c70ae895e%2F96953878%2A~hmac=6caa7aeff0692611df2afb13b335bd0981e729bc7b75d659f7cf783ef036dbb2&r=dXMtZWFzdDE%3D"
+        "https://a.storyblok.com/f/133769/x/833a506717/pixel-flakes-hover.mp4"
     },
     {
       heading: "Columbia Pictures",
@@ -32,7 +32,7 @@ const Work = () => {
       image:
         "https://a.storyblok.com/f/133769/2409x3000/cfd16e1a58/cambium-carbon-hero.jpg/m/1300x1619/filters:quality(90)",
       video:
-        "https://download-video-ak.vimeocdn.com/v3-1/playback/4bdb3586-71c8-40be-b000-2ba5691333a3/dee0a4f7?__token__=st=1747088891~exp=1747103291~acl=%2Fv3-1%2Fplayback%2F4bdb3586-71c8-40be-b000-2ba5691333a3%2Fdee0a4f7%2A~hmac=c8ade8b01f6d367d9d0c2bdf4f4401b27dcce94f56ec6a5c457dbf8cf8082c3f&r=dXMtY2VudHJhbDE%3D"
+        "https://download-video-ak.vimeocdn.com/v3-1/playback/4bdb3586-71c8-40be-b000-2ba5691333a3/dee0a4f7?__token__=st=1748134992~exp=1748138592~acl=%2Fv3-1%2Fplayback%2F4bdb3586-71c8-40be-b000-2ba5691333a3%2Fdee0a4f7%2A~hmac=808330b1b357c23a2e0403c22eff61820822dc3f0a904158b9641faac89636d9&r=dXMtY2VudHJhbDE%3D"
     },
   ]);
   return (

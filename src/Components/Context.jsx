@@ -5,8 +5,14 @@ import { useEffect } from "react";
 
 
 export const ProductContext = createContext();
+export const CartContext = createContext();
+export const WishContext = createContext();
+
 const Context = (props) => {
     const [products, setProducts] = useState(JSON.parse(localStorage.getItem("products")) || null);
+    const [wish, setWish] = useState([]);
+    const [item, setItem] = useState([]);
+    
 
     const getProducts = async () => {
         try {
@@ -26,7 +32,11 @@ const Context = (props) => {
     return (
         <div>
             <ProductContext.Provider value={[products, setProducts]}>
-                {props.children}
+                <WishContext.Provider value={[wish, setWish]}>
+                    <CartContext.Provider value={{item, setItem}}>
+                        {props.children}
+                    </CartContext.Provider>
+                </WishContext.Provider>
             </ProductContext.Provider>
         </div>
     );
