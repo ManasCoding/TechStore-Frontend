@@ -11,6 +11,7 @@ import { WishContext } from './Context.jsx'
 import NavBar from './Navbar.jsx';
 import { GiSelfLove } from "react-icons/gi";
 import { GiRoyalLove } from "react-icons/gi";
+import { toast } from 'react-toastify';
 //  import { ProductContext } from './Context.jsx'
 const Details = () => {
   // const [products, setproducts] = useContext(ProductContext);
@@ -63,6 +64,7 @@ const Details = () => {
       },
     ]);
     setAddedToCart(true);
+    toast.success("Product added to cart successfully");
   };
 
   useEffect(() => {
