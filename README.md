@@ -4,50 +4,44 @@ TechStore is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) e-commer
 
 ---
 
-## 🎯 Objective
+## 📌 Features
 
-The goal of TechStore is to build a scalable and secure online shopping platform with modern UI and efficient backend services for handling products, users, and orders.
-
----
-
-## 🚀 Features
-
-- 🔐 User Authentication (JWT-based)
-- 🛍️ Product Listing & Categories
-- 🔎 Search & Filter Products
-- 🛒 Add to Cart & Wishlist
-- 💳 Secure Payment Integration
-- 📦 Order Management System
-- ⭐ Product Reviews & Ratings
-- 🧑‍💼 Admin Dashboard (Manage products & orders)
-- 📱 Fully Responsive Design
+* 🔐 User Authentication (JWT-based)
+* 📹 Video Upload & Streaming
+* ❤️ Like / Dislike System
+* 💬 Comments on Videos
+* 🔍 Search & Filter Functionality
+* 📱 Responsive UI (Mobile + Desktop)
 
 ---
 
 ## 🛠️ Tech Stack
 
 **Frontend:**
-- React.js
-- Redux / Context API
-- Axios
-- Tailwind CSS 
+
+* React.js
+* Axios
+* Tailwind CSS / CSS
 
 **Backend:**
-- Node.js
-- Express.js
+
+* Node.js
+* Express.js
 
 **Database:**
-- MongoDB (Mongoose)
+
+* MongoDB (Mongoose)
 
 **Other Tools:**
-- JWT Authentication
-- Razorpay / Stripe (Payment Gateway)
-- Cloudinary (Product Images)
+
+* Cloudinary / AWS S3 (for media storage)
+* JWT Authentication
 
 ---
 
 ## 📂 Folder Structure
 
+```
 WebStream/
 │
 ├── frontend/
@@ -62,90 +56,94 @@ WebStream/
 │   └── middleware/
 │
 └── README.md
-
+```
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### 1. Clone Repository
+### 1. Clone the repository
 
+```
+git clone https://github.com/your-username/webstream.git
+cd webstream
+```
 
----
+### 2. Install dependencies
 
-### 2. Install Dependencies
+**Frontend:**
 
-**Frontend**
-
+```
 cd frontend
 npm install
+```
 
+**Backend:**
 
-**Backend**
-
+```
 cd backend
 npm install
-
+```
 
 ---
 
 ### 3. Environment Variables
 
-Create `.env` file in backend:
+Create a `.env` file in backend folder:
 
-
+```
 PORT=5000
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_secret_key
-
-RAZORPAY_KEY=your_key
-RAZORPAY_SECRET=your_secret
-
 CLOUDINARY_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
-
+```
 
 ---
 
-### 4. Run Application
+### 4. Run the app
 
-**Backend**
+**Backend:**
 
+```
 npm run dev
+```
 
+**Frontend:**
 
-**Frontend**
-
+```
 npm run dev
-
+```
 
 ---
 
 ## 🔄 API Endpoints (Sample)
 
-- `POST /api/auth/register` → Register user  
-- `POST /api/auth/login` → Login  
-- `GET /api/products` → Get all products  
-- `POST /api/cart` → Add to cart  
-- `POST /api/orders` → Place order  
-- `POST /api/payment` → Handle payment  
+* `POST /api/auth/register` → Register user
+* `POST /api/auth/login` → Login user
+* `POST /api/videos/upload` → Upload video
+* `GET /api/videos` → Get all videos
+* `GET /api/videos/:id` → Get single video
+* `POST /api/comments` → Add comment
 
 ---
 
 ## 📸 Screenshots
 
-_Add your screenshots here (Home, Product Page, Cart, Checkout, etc.)_
+*Add your project screenshots here*
 
 ---
 
-## 💡 Future Enhancements
+## 🚀 Future Improvements
 
-- 🤖 AI-based product recommendations  
-- 🚚 Order tracking system  
-- 📲 Push notifications  
-- 🌍 Multi-language support  
+* 🔴 Live Streaming
+* 💳 Subscription / Payment System
+* 🤖 AI-based Recommendations
+* 📊 Analytics Dashboard
 
 ---
+
+⭐ If you like this project, give it a star!
 
 ⭐ If you like this project, give it a star!
