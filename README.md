@@ -48,19 +48,18 @@ The goal of TechStore is to build a scalable and secure online shopping platform
 
 ## 📂 Folder Structure
 
-TechStore/
+WebStream/
 │
 ├── frontend/
-│ ├── components/
-│ ├── pages/
-│ ├── redux/
-│ └── services/
+│   ├── src/
+│   ├── components/
+│   └── pages/
 │
 ├── backend/
-│ ├── models/
-│ ├── routes/
-│ ├── controllers/
-│ └── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── controllers/
+│   └── middleware/
 │
 └── README.md
 
